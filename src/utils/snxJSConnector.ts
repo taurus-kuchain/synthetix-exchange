@@ -1,4 +1,5 @@
-import { SynthetixJs, ContractSettings } from 'synthetix-js';
+// @ts-ignore
+import { SynthetixJs, ContractSettings } from 'synthetix-js-a';
 
 import { ethers } from 'ethers';
 import {
@@ -46,11 +47,13 @@ const snxJSConnector: SnxJSConnector = {
 		this.ethers = ethers;
 		this.contractSettings = contractSettings;
 		this.synthSummaryUtilContract = new ethers.Contract(
+			// @ts-ignore
 			synthSummaryUtilContract.addresses[contractSettings.networkId],
 			synthSummaryUtilContract.abi,
 			this.provider
 		);
 		this.binaryOptionsMarketDataContract = new ethers.Contract(
+			// @ts-ignore
 			binaryOptionsMarketDataContract.addresses[contractSettings.networkId],
 			binaryOptionsMarketDataContract.abi,
 			this.provider
